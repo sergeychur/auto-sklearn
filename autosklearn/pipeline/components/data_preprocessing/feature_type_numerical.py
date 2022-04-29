@@ -12,6 +12,7 @@ from autosklearn.pipeline.components.data_preprocessing.imputation.numerical_imp
     import NumericalImputation
 from autosklearn.pipeline.components.data_preprocessing.variance_threshold\
     .variance_threshold import VarianceThreshold
+from autosklearn.pipeline.components.data_preprocessing.doe_repair.add_points_operator import AddPointsOperator
 
 from autosklearn.pipeline.base import (
     BasePipeline,
@@ -118,6 +119,7 @@ class NumericalPreprocessingPipeline(BasePipeline):
             ("imputation", NumericalImputation()),
             ("variance_threshold", VarianceThreshold()),
             ("rescaling", rescaling_components.RescalingChoice(default_dataset_properties)),
+            ("add_points", AddPointsOperator()),
             ])
 
         return steps
