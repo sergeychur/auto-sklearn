@@ -83,3 +83,6 @@ prof/
 
 # Mypy
 .mypy_cache/
+
+# venv
+venv/
