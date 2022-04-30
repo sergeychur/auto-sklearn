@@ -14,6 +14,9 @@ class AddPointsOperator(AutoSklearnPreprocessingAlgorithm):
     """
 
     def __init__(self, **kwargs):
+        self.method = None
+        self.opt_criterion = None
+        self.n_points_frac = None
         super().__init__()
         for key, val in kwargs.get('config', {}).items():
             setattr(self, key, val)
